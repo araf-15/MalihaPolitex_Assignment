@@ -9,8 +9,6 @@ namespace Task_1.Foundation.UnitOfWorks
     {
         public IStudentRepository StudentRepository { get; set; }
         public IDepartmentRepository DepartmentRepository { get; set; }
-        IStudentRepository IStudentUnitOfWork.StudentRepository { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        IDepartmentRepository IStudentUnitOfWork.DepartmentRepository { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public StudentUnitOfWork(StudentManagementContext context,
             IStudentRepository studentRepository,

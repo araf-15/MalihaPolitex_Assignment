@@ -1,0 +1,71 @@
+﻿@{
+    ViewData["Title"] = "Registration";
+}
+
+
+
+
+@model RegistrationModel
+<div class="content-header">
+    <div class="container-fluid">
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0 text-dark">Enrollment</h1>
+                            </div>
+                        </div>
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Enroll Student</h3>
+                            </div>
+                            <form asp-controller="Registration" asp-action="Registration" method="post">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Select Student ID</label>
+                                        <select id="studentList" asp-for="StudentId"
+                                                asp-items="@Model.GetListOfStudents()" class="form-control select2" style="width: 100%;">
+                                            <option selected="selected">---Select Option---</option>
+                                        </select>
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label>Select Course ID</label>
+                                        <select asp-for="CourseId"
+                                                asp-items="@Model.GetListOfCourses()" class="form-control select2" style="width: 100%;">
+                                            <option selected="selected">---Select Option---</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Enroll Date</label>
+                                        <div class="input-group">
+                                            <input asp-for="EnrollDate" type="date" class="form-control float-right">
+                                        </div>
+                                        <!-- /.input group -->
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input asp-for="IsPaymentComplete" class="custom-control-input" type="checkbox" id="customCheckbox1">
+                                            <label for="customCheckbox1" class="custom-control-label">Payment</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

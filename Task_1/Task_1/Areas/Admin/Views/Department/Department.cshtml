@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Department";
+}
+
+<!-- Content Header (Page header) -->
+
+@model DepartmentModel
+<div class="content-header">
+    <div class="container-fluid">
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0 text-dark">Student</h1>
+                            </div>
+                        </div>
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Create Student</h3>
+                            </div>
+                            <form asp-controller="Department" asp-action="Department" method="post" role="form">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>Department Name</label>
+                                        <input asp-for="DepartmentName" class="form-control" placeholder="Enter Department Name" />
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h3 class="m-0 text-dark">  Department Info   </h3>
+                            </div>
+                        </div>
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                Inserted Data
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Name: @Model.DepartmentName</label>
+                                </div>
+                            </div>
+                            <div class="card-body">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
